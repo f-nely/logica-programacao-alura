@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcula consumo</title>
+</head>
+<body>
+    <h3>Álcool ou Gasolina?</h3>
+
+    <script>
+
+        let tanque = 40;
+        let caminho_com_gasolina = 480;
+        let consumo_de_gasolina = caminho_com_gasolina / tanque;
+
+        document.write('O consumo de gasolina é ' + consumo_de_gasolina + ' km/L');
+
+        let caminho_com_alcool = 300;
+        let consumo_de_alcool = tanque / caminho_com_alcool;
+
+        document.write('<br>');
+
+        document.write('O consumo de álcool é ' + consumo_de_alcool.toFixed(2) + ' km/L')
+
+    </script>
+</body>
+</html>
