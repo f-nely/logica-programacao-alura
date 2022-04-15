@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 05</title>
+</head>
+<body>
+    <script>
+
+        function pula_linha() {
+            document.write('<br><br>');
+        }
+
+        function mostra(frase) {
+            document.write(frase);
+            pula_linha();
+        }
+
+        function calcula_imc(peso, altura) {
+            return peso / (altura * altura);
+        }
+
+        // mostra('O imc do Flávio é ' + calcula_imc(73, 1.71));
+        // mostra('O imc do meu amigo é ' + calcula_imc(68, 1.72));
+
+        let nome = prompt('Digite seu nome: ');
+        let peso = parseFloat(prompt(nome + ', digite seu peso: '));
+        let altura = parseFloat(prompt(nome + ', digite sua altura: '));
+
+        let imc = calcula_imc(peso, altura)
+
+        document.write(nome + ', o seu IMC é ' + imc);
+
+    </script>
+</body>
+</html>
