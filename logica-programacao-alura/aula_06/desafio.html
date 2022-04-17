@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio</title>
+</head>
+<body>
+    <script>
+        function pula_linha() {
+            document.write('<br><br>');
+        }
+
+        function mostra(frase) {
+            document.write(frase);
+            pula_linha();
+        }
+
+        function sorteia(n) {
+            return Math.round(Math.random() * n);
+        }
+
+        //mostra('número sorteado ' + sorteia(5));
+        let numero_pensado = sorteia(5);
+        let chute = parseInt(prompt('Digite seu palpite: '));
+        console.log('numero pensado ' + numero_pensado);
+        console.log('chute ' + chute);
+
+        if (chute == numero_pensado) {
+            mostra('Oba.. Você acertou.');
+        } else {
+            mostra('Ops.. Você errou!');
+            if (numero_pensado < chute) {
+                mostra('O número é um pouco menor..');
+            } else if (numero_pensado > chute) {
+                mostra('O número é um pouco maior..');
+            }
+        }
+
+    </script>
+</body>
+</html>
