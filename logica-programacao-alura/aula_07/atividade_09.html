@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 09</title>
+</head>
+<body>
+    <script>
+
+        function pula_linha() {
+            document.write('<br><br>');
+        }
+
+        function mostra(frase) {
+            document.write(frase);
+            pula_linha();
+        }
+
+        function sorteia() {
+            return Math.round(Math.random() * 100);
+        }
+
+        let numero_pensado = sorteia();
+        let chute = parseInt(prompt('Já pensei. Qual você acha que é? '));
+        
+        if (chute == numero_pensado) {
+            mostra('Uau! Você acertou, pois eu pensei no ' + numero_pensado);
+        } else {
+            j = 0;
+            while(j < 10) {
+                mostra('Já era, você errou!');
+                j += 1;
+            }
+        }
+
+    </script>
+</body>
+</html>
