@@ -20,12 +20,19 @@
 
         let numero_pensado = Math.floor(Math.random() * 10);
         
-        let chute = parseInt(prompt('Digite seu palpite: '));
+        let tentativas = 0;
+        while (tentativas < 3) {
 
-        if (numero_pensado == chute) {
-            mostra('Você acertou!');
-        } else {
-            mostra('Vocẽ errou, o número pensado foi ' + numero_pensado);
+            let chute = parseInt(prompt('Digite seu palpite: '));
+
+            if (numero_pensado == chute) {
+                mostra('Você ACERTOU, o número pensado é ' + numero_pensado);
+                break;
+            } else {
+                mostra('Vocẽ ERROU!');
+            }
+
+            tentativas++;
         }
 
     </script>
