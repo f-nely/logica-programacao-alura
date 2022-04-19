@@ -1,0 +1,16 @@
+input {
+    padding: 7px 9px;
+}
+
+
+button {
+    background-color: #FFF;
+    color: #32a852;
+    border: 1px solid #32a852;
+    padding: 8px 10px;
+}
+
+button:hover {
+    background-color: #32a852;
+    color: #FFF;
+}
