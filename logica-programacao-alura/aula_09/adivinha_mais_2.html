@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../aula_08/styles.css">
+    <title>Advinha mais</title>
+</head>
+<body>
+    
+    <input type="text" placeholder="Digite seu palpite!">
+    <button>Compare com o meu segredo</button>
+
+    <script>
+
+        function sorteia() {
+
+            return Math.round(Math.random() * 10);
+
+        }
+
+        function sorteia_numeros(qtd) {
+
+            let segredos = [];
+            let numero = 1;
+
+            while (numero <= qtd) {
+
+                let numero_aleatorio = sorteia();
+
+                if (numero_aleatorio !== 0) {
+                    let achou = false;
+
+                    for (let pos = 0; pos < segredos.length; pos++) {
+                        if (segredos[pos] == numero_aleatorio) {
+                            achou = true;
+                            break;
+                        }
+                    }
+
+                    if (!achou) {
+                        segredos.push(numero_aleatorio);
+                        numero++;
+                    }
+                }
+                
+            }
+
+            return segredos;
+
+        }
+
+        let segredos = sorteia_numeros(6);
+        console.log(segredos);
+
+        let input = document.querySelector('input');
+        input.focus();
+
+        function verifica() {
+
+            let achou = false;
+
+            for (let i = 0; i < segredos.length; i++) {
+                if (input.value == segredos[i]) {
+                    alert('Você ACERTOU!');
+                    achou = true;
+                    break;
+                }
+            }
+
+            if (!achou) {
+                alert('Você ERROU!');
+            }
+            
+            input.value = '';
+            input.focus();
+        }
+
+        let button = document.querySelector('button');
+        button.onclick = verifica;
+
+    </script>
+</body>
+</html>
