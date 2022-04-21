@@ -9,15 +9,36 @@
 <body>
     <h1>Receitas do Yan</h1>
     <script>
+
         let ingredientes = [];
         let qtd = parseInt(prompt('Quantos ingredientes você vai adicionar? '));
-        let cont = 1;
-        while (cont <= qtd) {
-            let ingrediente = prompt('Informe o ingrediente: ');
-            ingredientes.push(ingrediente);
-            cont++;
+
+        function inserir(qtd) {
+            let cont = 1;
+            while (cont <= qtd) {
+                
+                let ingrediente = prompt('Informe o ingrediente: ');
+                let existe = false;
+
+                for (let i = 0; i < ingredientes.length; i++) {
+                    if (ingredientes[i] == ingrediente) {
+                        existe = true;
+                        break;
+                    } 
+                }
+
+                if (!existe) {
+                    ingredientes.push(ingrediente);
+                    cont++;
+                }
+
+            }
         }
+
+        inserir(qtd);
+
         console.log(ingredientes);
+
     </script>
 </body>
 </html>
